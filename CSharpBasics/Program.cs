@@ -21,6 +21,6 @@ class Program
         //IterationStatement iterationStatement = new IterationStatement();
         //iterationStatement.LearnForLoops();
         AccessModifier accessModifier = new AccessModifier();
-        accessModifier.DoSomething()
+        accessModifier.DoSomething();
     }
 }
