@@ -65,7 +65,7 @@ class Methods
 
     }
 
-    void PrintCustomerDetails(string string, string address, byte age, bool isMale)
+    void PrintCustomerDetails(string name, string address, byte age, bool isMale)
     {
         Console.WriteLine($"{name}[{age}], {address}");
     }
