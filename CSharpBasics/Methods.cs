@@ -41,6 +41,7 @@ class Methods
     //variable number of arguments
     double Sum(params double[] numbers)
     {
+        double sum = 0;
         foreach(double num in numbers)
         {
             sum = sum + num;
