@@ -1,6 +1,7 @@
 ﻿using System;
 //using AccessModifierAndMethods;
 using LearningClasses;
+using FileDirectoryHandling;
 //using P = LearningClasses.Person;
 // namespace CSharpBasics
 // {
@@ -51,16 +52,19 @@ class Program
         // rectangle1.Breadth = 6.32;
         // var result = rectangle1.GetArea();
 
-        Shape r = new Rectangle(23.6, 6.32);
-        Rectangle r1 = new Rectangle(278.6, 61.32);
-        r.PrintDetails();
-        r1.PrintDetails();
+        // Shape r = new Rectangle(23.6, 6.32);
+        // Rectangle r1 = new Rectangle(278.6, 61.32);
+        // r.PrintDetails();
+        // r1.PrintDetails();
 
-        Shape s1 = new Square(34.5);        
-        s1.PrintDetails();
+        // Shape s1 = new Square(34.5);        
+        // s1.PrintDetails();
 
-        Shape c = new Circle(23.4);
-        c.PrintDetails();
+        // Shape c = new Circle(23.4);
+        // c.PrintDetails();
+        FileIO file = new FileIO();
+        file.LearnDirectoryInfo();
+
 
     }
 }
