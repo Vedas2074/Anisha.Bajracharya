@@ -1,0 +1,23 @@
+@model List<Department>
+<h2>Departments</h2>
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">DepartmentName</th>
+      <th scope="col">Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var department in Model)
+    {    
+    <tr>
+        <th scope="row">@department.Id</th>
+        <td>@department.DepartmentName</td>
+        <td>@department.Salary</td>
+    </tr>
+    }
+  </tbody>
+</table>

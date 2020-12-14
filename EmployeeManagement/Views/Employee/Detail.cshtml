@@ -1,0 +1,12 @@
+@model Employee
+
+<h2>@Model.FirstName's Detail<a class="btn btn-primary" href="/Employee/Index">Back to Employee List</a>
+</h2>
+
+<ul class="list-group list-group-flush">
+  <li class="list-group-item"></b>FirstName: @Model.FirstName</li>
+  <li class="list-group-item">SurName: @Model.LastName</li>
+  <li class="list-group-item">Address: @Model.Address</li>
+  <li class="list-group-item">Age: @Model.Age</li>
+  <li class="list-group-item">Salary: @Model.Salary</li>
+</ul>
