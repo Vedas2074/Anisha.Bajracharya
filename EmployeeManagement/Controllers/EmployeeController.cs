@@ -30,6 +30,12 @@ namespace EmployeeManagement.Controllers
             return View();
 
         }
-           
+        [HttpPost]
+         public string Add(Employee employee)
+        {
+            
+            return "Record Saved";
+
+        }  
     }
 }

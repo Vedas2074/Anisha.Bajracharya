@@ -28,5 +28,18 @@ namespace EmployeeManagement.Controllers
 
             return View(departments);
         }
+        public ActionResult Add()
+        {
+            
+            return View();
+
+        }
+        [HttpPost]
+         public string Add(Department department)
+        {
+            
+            return "Record Saved";
+
+        }  
     }
 }

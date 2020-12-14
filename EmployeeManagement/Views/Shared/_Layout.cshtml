@@ -21,12 +21,26 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="Index">Employees</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Employee
+                            </a>
+                            <div class="dropdown-menu">
+                            <a class="dropdown-item" asp-action="Index" asp-controller="Employee">All Employees</a>
+                            <a class="dropdown-item" asp-action="Add" asp-controller="Employee">Add Employees</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Department" asp-action="Index">Department</a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Department
+                            </a>
+                            <div class="dropdown-menu">
+                            <a class="dropdown-item" asp-action="Index" asp-controller="Department">All Department</a>
+                            <a class="dropdown-item" asp-action="Add" asp-controller="Department">Add Department</a>
+                            </div>
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -47,5 +61,8 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
 </body>
 </html>
