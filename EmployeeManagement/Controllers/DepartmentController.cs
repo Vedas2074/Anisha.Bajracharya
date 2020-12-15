@@ -10,24 +10,38 @@ namespace EmployeeManagement.Controllers
 {
     public class DepartmentController : Controller
     {
-         public IActionResult Index()
+        public IActionResult Index()
         {
-            Department department1 = new Department()
-            {
-                Id = 1,
-                DepartmentName = "IT",
-                Salary = 1546312
-            };
-            Department department2 = new Department()
-            {
-                Id = 2,
-                DepartmentName = "Developer",
-                Salary = 6312155
-            };
-            List<Department> departments =  new List<Department>() {department1, department2};
+        
+            var departments = Department.GetDepartments();
 
             return View(departments);
         }
+        public ActionResult Detail(int id)
+        {
+            var departments = Department.GetDepartments();
+            var dept = departments.FirstOrDefault(x => x.Id == id);
+            return View(dept);
+
+        }
+        //  public IActionResult Index()
+        // {
+        //     Department department1 = new Department()
+        //     {
+        //         Id = 1,
+        //         DepartmentName = "IT",
+        //         Salary = 1546312
+        //     };
+        //     Department department2 = new Department()
+        //     {
+        //         Id = 2,
+        //         DepartmentName = "Developer",
+        //         Salary = 6312155
+        //     };
+        //     List<Department> departments =  new List<Department>() {department1, department2};
+
+        //     return View(departments);
+        // }
         public ActionResult Add()
         {
             
