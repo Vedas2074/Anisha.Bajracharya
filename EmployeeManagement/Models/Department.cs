@@ -17,6 +17,7 @@ namespace EmployeeManagement.Models
                 DepartmentName = "IT",
                 Salary = 1546312
             };
+            
             Department department2 = new Department()
             {
                 Id = 2,

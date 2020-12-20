@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using EmployeeManagement.Models;
+using EmployeeManagement.Data;
 namespace EmployeeManagement.Controllers
 {
     public class EmployeeController : Controller
@@ -37,5 +38,12 @@ namespace EmployeeManagement.Controllers
             return "Record Saved";
 
         }  
+
+        private readonly EMContext db;
+
+        public EmployeeController(EMContext _db)
+        {
+            db = _db;
+        }
     }
 }
