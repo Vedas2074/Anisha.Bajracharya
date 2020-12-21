@@ -14,16 +14,54 @@ namespace EmployeeManagement.Controllers
         public IActionResult Index()
         {
         
-            var employees = Employee.GetEmployees();
+            var employees = db.Employees.ToList();
+            return View(employees);
+        }
+        
+        public IActionResult Detail(int id)
+        {
+        
+            var employees = db.Employees.Find(id);
 
             return View(employees);
         }
-        public ActionResult Detail(int id)
+        [HttpGet]
+        public ActionResult Edit(int id)
         {
-            var employees = Employee.GetEmployees();
-            var emp = employees.FirstOrDefault(x => x.Id == id);
-            return View(emp);
+            var employee = db.Employees.Find(id);
+            return View(employee);
+        }
+        [HttpPost]
+        public ActionResult Edit(Employee employee)
+        {
+            db.Employees.Attach(employee);
+            db.Employees.Update(employee);
+            db.SaveChanges();
+            return RedirectToAction("Index");
 
+        }
+
+        // public ActionResult Detail(int id)
+        // {
+        //     var employees = Employee.GetEmployees();
+        //     var emp = employees.FirstOrDefault(x => x.Id == id);
+        //     return View(emp);
+
+        // }
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var employee = db.Employees.Find(id);
+            return View(employee);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Employee employee)
+        {
+            db.Employees.Attach(employee);
+            db.Employees.Remove(employee);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
         public ActionResult Add()
         {
@@ -32,18 +70,21 @@ namespace EmployeeManagement.Controllers
 
         }
         [HttpPost]
-         public string Add(Employee employee)
+        public ActionResult Add(Employee employee)
         {
             
-            return "Record Saved";
+            db.Employees.Add(employee);
+            db.SaveChanges();
+            return RedirectToAction("Index");
 
         }  
-
+        
         private readonly EMContext db;
 
         public EmployeeController(EMContext _db)
         {
             db = _db;
         }
+    
     }
 }

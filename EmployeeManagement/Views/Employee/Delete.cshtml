@@ -1,0 +1,22 @@
+@model Employee
+
+@{
+    ViewData["Title"] = Model.FirstName;
+}
+
+<h2>Are you sure you want to delete this Record?</h2>
+
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">FirstName : @Model.FirstName</li>
+  <li class="list-group-item">LastName: @Model.LastName</li>
+  <li class="list-group-item">Address : @Model.Address</li>
+  <li class="list-group-item">Salary : @Model.Salary</li>
+</ul>
+
+<br>
+<form asp-controller="Employee" asp-action="Delete" method="POST">
+    <input type="hidden" asp-for="Id">
+    <button class="btn btn-danger">Yes</button>
+    <button class="btn btn-danger" asp-controller="Employee" asp-action="Index">No</button>
+</form> 
+ 
